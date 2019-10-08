@@ -1,0 +1,26 @@
+<h1>welcome to employee management</h1> 
+<div>
+    <form>
+         <input type="hidden" name="employee.eno" /><br/>
+        Name : <input type="text" [(ngModel)]="employee.name" name="name"/><br/>
+        Salary : <input type="text" [(ngModel)]="employee.salary" name="salary"/><br/>
+        <button (click)="addEmployee()">Add Employee</button>
+    </form>
+</div>
+<div>
+    <table border="1">
+        <tr>
+            <th>eno</th>
+            <th>name</th>
+            <th>salary</th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.eno}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.salary}}</td>
+            <td><button (click)="getEmployeeById(employee.eno)">EDIT</button> |<button (click)="deleteEmployee(employee.eno)">DELETE</button> </td>
+        </tr>
+    </table>
+
+
+</div>
